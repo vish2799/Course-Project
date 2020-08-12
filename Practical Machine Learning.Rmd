@@ -79,6 +79,65 @@ prediction2 <- predict(model1, train2)
 #Confusion Matrix
 confusionMatrix(prediction1, as.factor(train1$classe))
 confusionMatrix(prediction2, as.factor(train2$classe))
+
+Results:
+Confusion Matrix and Statistics
+          Reference
+Prediction    A    B    C    D    E
+         A 3906    0    0    0    0
+         B    0 2658    0    0    0
+         C    0    0 2396    0    0
+         D    0    0    0 2252    0
+         E    0    0    0    0 2525
+Overall Statistics
+                                     
+               Accuracy : 1          
+                 95% CI : (0.9997, 1)
+    No Information Rate : 0.2843     
+    P-Value [Acc > NIR] : < 2.2e-16  
+                                     
+                  Kappa : 1          
+                                     
+ Mcnemar's Test P-Value : NA         
+Statistics by Class:
+                     Class: A Class: B Class: C Class: D Class: E
+Sensitivity            1.0000   1.0000   1.0000   1.0000   1.0000
+Specificity            1.0000   1.0000   1.0000   1.0000   1.0000
+Pos Pred Value         1.0000   1.0000   1.0000   1.0000   1.0000
+Neg Pred Value         1.0000   1.0000   1.0000   1.0000   1.0000
+Prevalence             0.2843   0.1935   0.1744   0.1639   0.1838
+Detection Rate         0.2843   0.1935   0.1744   0.1639   0.1838
+Detection Prevalence   0.2843   0.1935   0.1744   0.1639   0.1838
+Balanced Accuracy      1.0000   1.0000   1.0000   1.0000   1.0000
+Confusion Matrix and Statistics
+          Reference
+Prediction    A    B    C    D    E
+         A 5580   10    0    0    0
+         B    0 3787    1    0    2
+         C    0    0 3421    3    0
+         D    0    0    0 3213    0
+         E    0    0    0    0 3605
+Overall Statistics
+                                          
+               Accuracy : 0.9992          
+                 95% CI : (0.9987, 0.9995)
+    No Information Rate : 0.2844          
+    P-Value [Acc > NIR] : < 2.2e-16       
+                                          
+                  Kappa : 0.999           
+                                          
+ Mcnemar's Test P-Value : NA              
+Statistics by Class:
+                     Class: A Class: B Class: C Class: D Class: E
+Sensitivity            1.0000   0.9974   0.9997   0.9991   0.9994
+Specificity            0.9993   0.9998   0.9998   1.0000   1.0000
+Pos Pred Value         0.9982   0.9992   0.9991   1.0000   1.0000
+Neg Pred Value         1.0000   0.9994   0.9999   0.9998   0.9999
+Prevalence             0.2844   0.1935   0.1744   0.1639   0.1838
+Detection Rate         0.2844   0.1930   0.1743   0.1637   0.1837
+Detection Prevalence   0.2849   0.1932   0.1745   0.1637   0.1837
+Balanced Accuracy      0.9996   0.9986   0.9998   0.9995   0.9997
+
 #we get almost 99% accuracy that is a very high accuracy so we didnt actually overfit the model and also we can say that out of sample error is about 1%.
 
 ##Testing Model
@@ -90,5 +149,9 @@ test <- test[, -nzvt]
 #Prediction using model1 on testing dataset
 prediction <- predict(model1, test)
 prediction
+
+Output:
+ [1] B A B A A E D B A A B C B A E E A B B B
+Levels: A B C D E
 ```
 
